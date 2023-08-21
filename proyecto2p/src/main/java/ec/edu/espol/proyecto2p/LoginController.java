@@ -50,10 +50,14 @@ public class LoginController implements Initializable {
             if(u.getCorreoe().equals(correoe) && u.getContrasena().equals(contra)){
                 Alert a = new Alert(Alert.AlertType.INFORMATION, "Usuario Valido");
                 a.show();
+                correo.setText("");
+                contrasena.setText("");
                 break;
             }else{
                 Alert a = new Alert(Alert.AlertType.INFORMATION, "Usuario Incorrecto");
                 a.show();
+                correo.setText("");
+                contrasena.setText("");
                 break;
             }
         }   

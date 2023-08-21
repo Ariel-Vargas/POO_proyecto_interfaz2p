@@ -7,6 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+import javafx.scene.input.MouseEvent;
 
 /**
  * JavaFX App
@@ -17,7 +20,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("login"), 640, 480);
+        scene = new Scene(loadFXML("registro_vehiculo"), 640, 480);
         stage.setScene(scene);
         stage.show();
     }
@@ -33,7 +36,11 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
-        /*
+    }
+
+}
+
+/*
         Scanner sc = new Scanner(System.in);
         String correo; 
         String cont;
@@ -51,7 +58,4 @@ public class App extends Application {
         
         ArrayList<Usuario> lista = Usuario.readSer("UsuarioSer.txt");
         System.out.println(lista);
-        */
-    }
-
-}
+ */
