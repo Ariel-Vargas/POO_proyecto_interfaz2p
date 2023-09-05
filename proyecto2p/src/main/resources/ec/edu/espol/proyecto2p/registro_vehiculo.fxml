@@ -10,56 +10,114 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.proyecto2p.RVehiculoController">
+<AnchorPane id="AnchorPane" prefHeight="472.0" prefWidth="630.0" style="-fx-border-color: #0598ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.proyecto2p.controller.RVehiculoController">
    <children>
-      <BorderPane layoutX="1.0" prefHeight="400.0" prefWidth="600.0">
+      <BorderPane layoutX="1.0" layoutY="5.0" prefHeight="461.0" prefWidth="630.0">
          <center>
             <GridPane BorderPane.alignment="CENTER">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="0.0" prefWidth="18.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="134.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="258.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="176.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="202.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="241.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="138.0" />
               </columnConstraints>
               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="26.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="26.0" minHeight="7.0" prefHeight="7.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Ingrese Placa" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
-                  <TextField fx:id="placa" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <TextField fx:id="marca" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <TextField fx:id="modelo" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <TextField fx:id="tipoMotor" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <TextField fx:id="anio" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <TextField fx:id="recorrido" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                  <TextField fx:id="color" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                  <TextField fx:id="tipoCombustible" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                  <Label text="Marca" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Label text="Modelo" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Label text="Tipo de Motor" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Label text="Año" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <Label text="Recorrido" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <Label text="Color" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <Label text="Tipo De combustible" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                  <Button fx:id="continuar" mnemonicParsing="false" onAction="#registrarVehiculo" text="Registrar" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
-                  <TextField fx:id="precio" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-                  <Label text="Precio" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <Label text="Ingrese Placa:" textFill="#0598ff" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Baskerville Old Face" size="20.0" />
+                     </font></Label>
+                  <TextField fx:id="placa" style="-fx-border-color: #0598ff;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextField fx:id="marca" style="-fx-border-color: #0598ff;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <TextField fx:id="modelo" style="-fx-border-color: #0598ff;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <TextField fx:id="tipoMotor" style="-fx-border-color: #0598ff;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <TextField fx:id="anio" style="-fx-border-color: #0598ff;" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <TextField fx:id="recorrido" style="-fx-border-color: #0598ff;" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <TextField fx:id="color" style="-fx-border-color: #0598ff;" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <TextField fx:id="tipoCombustible" style="-fx-border-color: #0598ff;" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                  <Label text="Marca:" textFill="#0598ff" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Baskerville Old Face" size="20.0" />
+                     </font></Label>
+                  <Label text="Modelo:" textFill="#0598ff" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Baskerville Old Face" size="20.0" />
+                     </font></Label>
+                  <Label text="Tipo de Vehiculo:" textFill="#0598ff" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Baskerville Old Face" size="20.0" />
+                     </font></Label>
+                  <Label text="Año:" textFill="#0598ff" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Baskerville Old Face" size="20.0" />
+                     </font></Label>
+                  <Label text="Recorrido:" textFill="#0598ff" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <font>
+                        <Font name="Baskerville Old Face" size="20.0" />
+                     </font></Label>
+                  <Label text="Color:" textFill="#0598ff" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                     <font>
+                        <Font name="Baskerville Old Face" size="20.0" />
+                     </font></Label>
+                  <Label text="Tipo De combustible:" textFill="#0598ff" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                     <font>
+                        <Font name="Baskerville Old Face" size="20.0" />
+                     </font></Label>
+                  <Button fx:id="continuar" mnemonicParsing="false" onAction="#registrarVehiculo" style="-fx-background-color: #0598ff;" text="Registrar" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font></Button>
+                  <TextField fx:id="precio" style="-fx-border-color: #0598ff;" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                  <Label text="Precio:" textFill="#0598ff" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                     <font>
+                        <Font name="Baskerville Old Face" size="20.0" />
+                     </font></Label>
+                  <Label text="Imagen:" textFill="#0598ff" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Baskerville Old Face" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="imagen" mnemonicParsing="false" onAction="#seleccionarImagen" style="-fx-background-color: #0598ff;" text="Seleccionar Imagen" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font>
+                  </Button>
+                  <Label text="Imagen:" textFill="#0598ff" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nombre_imagen" textFill="#0598ff" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="imagen_path" style="-fx-border-color: #0598ff;" visible="false" />
+                  <Button fx:id="regresar" mnemonicParsing="false" onAction="#regresar" style="-fx-background-color: #0598ff;" text="Regresar" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font>
+                  </Button>
                </children>
             </GridPane>
          </center>
          <top>
-            <Label contentDisplay="CENTER" text="REGISTRO DE VEHICULO" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
+            <Label contentDisplay="CENTER" text="Registro de Vehiculo" textAlignment="CENTER" textFill="#0598ff" wrapText="true" BorderPane.alignment="CENTER">
                <font>
-                  <Font name="Consolas" size="26.0" />
+                  <Font name="Gabriola" size="50.0" />
                </font>
             </Label>
          </top>
