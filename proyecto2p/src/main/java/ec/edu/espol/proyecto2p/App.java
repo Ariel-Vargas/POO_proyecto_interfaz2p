@@ -14,7 +14,7 @@ import javafx.scene.input.MouseEvent;
 /**
  * JavaFX App
  */
-public class App extends Application {
+ublic class App extends Application {
 
     private static Scene scene;
     private static Stage st;
@@ -26,7 +26,10 @@ public class App extends Application {
         stage.setScene(scene);
         stage.setTitle("COMPRA Y VENTA DE VEHICULOS");
         stage.setResizable(false);
+        
         stage.show();
+        ArrayList<Usuario> user = new ArrayList<>();
+        
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -40,30 +43,11 @@ public class App extends Application {
     
     public static void setScene(Scene sc){
         st.setScene(sc);
+        
     }
 
     public static void main(String[] args) {
         launch();
     }
-    
-}
 
-/*
-        Scanner sc = new Scanner(System.in);
-        String correo; 
-        String cont;
-        ArrayList<Usuario> us = new ArrayList<>();
-        for(int i=0; i<2; i++){
-            System.out.println("Ingrese correo electrónico: ");
-            correo = sc.nextLine();
-            System.out.println("Ingrese contraseña: ");
-            cont = sc.nextLine();
-            Usuario u = new Usuario(correo, cont);
-            us.add(u);
-        }
-        
-        Usuario.saveSer("UsuarioSer.txt", us);
-        
-        ArrayList<Usuario> lista = Usuario.readSer("UsuarioSer.txt");
-        System.out.println(lista);
- */
+}
