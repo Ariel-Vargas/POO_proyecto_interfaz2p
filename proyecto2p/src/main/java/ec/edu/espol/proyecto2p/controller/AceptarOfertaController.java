@@ -80,15 +80,16 @@ public class AceptarOfertaController implements Initializable {
     @FXML
     private void aceptarOferta(MouseEvent event) {
         
-        //            Utilitarios.enviarConGMail(correoComprador, Asunto, cuerpo);
+             Utilitarios.enviarConGMail(correoComprador, Asunto, cuerpo);
 
         
              Alert a = new Alert(Alert.AlertType.INFORMATION, "Se ha enviado un correo al Comprador para indicar que ha aceptado su oferta");
-            a.show();
+             a.show();
     }
 
     @FXML
     private void regresar(MouseEvent event) {
+        Button b = (Button)event.getSource();
          try {
             FXMLLoader loader = App.loadFXML("Vendedor");
             Scene sc = new Scene(loader.load(), 640, 480);
@@ -96,7 +97,7 @@ public class AceptarOfertaController implements Initializable {
             Stage st = new Stage();
             st.setScene(sc);
             st.show();
-            Stage old = (Stage) regresar.getScene().getWindow();
+            Stage old = (Stage) b.getScene().getWindow();
             old.close();
         } catch (IOException ex) {
             Alert a = new Alert(Alert.AlertType.ERROR, "No se pudo cargar el archivo");
