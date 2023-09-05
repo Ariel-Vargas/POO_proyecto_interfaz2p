@@ -1,7 +1,9 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
+
 package ec.edu.espol.proyecto2p;
 
 import java.net.URL;
@@ -17,8 +19,8 @@ import javafx.scene.input.MouseEvent;
 /**
  * FXML Controller class
  *
- * @author Usuario
- */
+***/
+
 public class Registro_usuarioController implements Initializable {
 
     @FXML
@@ -28,6 +30,7 @@ public class Registro_usuarioController implements Initializable {
     @FXML
     private Button registrar;
     
+
     
 
     /**
@@ -56,6 +59,7 @@ public class Registro_usuarioController implements Initializable {
                 return;                
             }
         }
+
         Usuario us = new Usuario(correonuevo,contrasenia);
         usuarios.add(us);
         Usuario.saveSer("UsuarioSer.txt", usuarios);
@@ -67,6 +71,3 @@ public class Registro_usuarioController implements Initializable {
     }
 }   
     
-
-    
-
