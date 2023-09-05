@@ -1,5 +1,6 @@
 package ec.edu.espol.proyecto2p;
 
+import ec.edu.espol.proyecto2p.modelo.Usuario;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,7 +15,10 @@ import javafx.scene.input.MouseEvent;
 /**
  * JavaFX App
  */
-ublic class App extends Application {
+
+//PROYECTO OFICIAL QUE SIRVE
+
+public class App extends Application {
 
     private static Scene scene;
     private static Stage st;

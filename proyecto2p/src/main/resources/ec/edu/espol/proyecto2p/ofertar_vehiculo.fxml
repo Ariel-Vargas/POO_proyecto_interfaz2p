@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.proyecto2p.controller.OfertarVehiculoController">
+   <children>
+      <BorderPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <top>
+            <Label text="Ofertar por Vehículo" textFill="#0598ff" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Gabriola" size="50.0" />
+               </font>
+            </Label>
+         </top>
+         <bottom>
+            <GridPane prefHeight="66.0" prefWidth="584.0" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="17.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="siguiente" mnemonicParsing="false" onAction="#siguiente" style="-fx-background-color: #0598ff;" text="Siguiente" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="regresar" mnemonicParsing="false" onAction="#regresar" style="-fx-background-color: #0598ff;" text="Regresar" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="placa_oferta" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Placa" textFill="#0598ff" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Gabriola" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label text="Precio Ofertado" textFill="#0598ff" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Gabriola" size="21.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="precio_oferta" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </bottom>
+         <center>
+            <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="placa" prefWidth="75.0" text="Placa" />
+                <TableColumn fx:id="imagen1" prefWidth="75.0" text="Imagen" />
+                  <TableColumn fx:id="marca" prefWidth="75.0" text="Marca" />
+                  <TableColumn fx:id="modelo" prefWidth="75.0" text="Modelo" />
+                  <TableColumn fx:id="motor" prefWidth="75.0" text="Motor" />
+                  <TableColumn fx:id="anio" prefWidth="75.0" text="Año" />
+                  <TableColumn fx:id="recorrido" prefWidth="75.0" text="Recorrido" />
+                  <TableColumn fx:id="precio" prefWidth="75.0" text="Precio" />
+              </columns>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

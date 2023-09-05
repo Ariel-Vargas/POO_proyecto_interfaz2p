@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.proyecto2p.controller.AceptarOfertaController">
+   <top>
+      <Label text="Ofertas" textFill="#0598ff" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Gabriola" size="50.0" />
+         </font>
+      </Label>
+   </top>
+   <right>
+      <ScrollBar orientation="VERTICAL" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.0" minWidth="10.0" prefWidth="95.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="127.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="42.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="281.0" minWidth="10.0" prefWidth="278.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="35.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="aceptaroferta" mnemonicParsing="false" onMouseClicked="#aceptarOferta" prefHeight="43.0" prefWidth="165.0" style="-fx-background-color: #0598ff;" text="Aceptar Oferta" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Bell MT" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="regresar" mnemonicParsing="false" onMouseClicked="#regresar" prefHeight="42.0" prefWidth="145.0" style="-fx-background-color: #0598ff;" text="Regresar" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Alef Regular" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+   </bottom>
+   <center>
+      <TableView fx:id="tableview" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="comprador" prefWidth="139.0" text="Comprador" />
+          <TableColumn fx:id="correoComprador" minWidth="0.0" prefWidth="148.0" text="Correo Del Comprador" />
+            <TableColumn fx:id="vehiculo" minWidth="0.0" prefWidth="89.0" text="Vehiculo" />
+            <TableColumn fx:id="placa" minWidth="0.0" prefWidth="96.0" text="Placa" />
+            <TableColumn fx:id="precio" minWidth="0.0" prefWidth="113.0" text="Precio" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>
