@@ -2,32 +2,35 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package ec.edu.espol.proyecto2p;
+package ec.edu.espol.proyecto2p.controller;
 
+import ec.edu.espol.proyecto2p.App;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
- * @author ariel
+ *
  */
 public class MenuController implements Initializable {
 
+    String correo_usuario;
+    
     @FXML
     private ComboBox<Integer> opcion;
 
@@ -36,96 +39,68 @@ public class MenuController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        opcion.getItems().addAll(1, 2, 3, 4);
-        // TODO
+        opcion.getItems().addAll(1,2,3);
+    }    
+    
+    @FXML
+    private void opcion(MouseDragEvent event) {
+
     }
 
     @FXML
-    private void aceptar(MouseEvent event) {
+    private void siguiente(MouseEvent event) {
         Button b = (Button)event.getSource();
-        int n = opcion.getValue();
+        int valor = (int)opcion.getValue();
+        if(valor==1){
+            try {
+                FXMLLoader loader = App.loadFXML("vendedor");
+                Scene sc = new Scene(loader.load(), 640, 480);
+                VendedorController mc = loader.getController();
+                mc.setUsuario(this.correo_usuario);
+                Stage st = new Stage();
+                st.setScene(sc);
+                st.show();
+                Stage old = (Stage) b.getScene().getWindow();
+                old.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         
-        try{
-            switch(n){
-                case 1: {
-                    try {
-                        FXMLLoader loader = App.loadFXML("registro_usuario");
-                        Scene sc = new Scene(loader.load(), 640, 480);
-                        Registro_usuarioController ru = loader.getController();
-                        Stage st = new Stage();
-                        st.setScene(sc);
-                        st.show();
-                        Stage old = (Stage)b.getScene().getWindow();
-                        old.close();
-                    } catch (IOException ex) {
-                        Alert a = new Alert(Alert.AlertType.ERROR, "No se pudo cargar el archivo");
-                        a.show();
-                    }
-                    break;
-                }
-
-                case 2:{
-                    try {
-                        FXMLLoader loader = App.loadFXML("registro_vehiculo");
-                        Scene sc = new Scene(loader.load(), 640, 480);
-                        RVehiculoController rv = loader.getController();
-                        Stage st = new Stage();
-                        st.setScene(sc);
-                        st.show();
-                        Stage old = (Stage)b.getScene().getWindow();
-                        old.close();
-                    } catch (IOException ex) {
-                        Alert a = new Alert(Alert.AlertType.ERROR, "No se pudo cargar el archivo");
-                        a.show();
-                    }
-                    break;
-                }
-
-                case 3:{
-                    try {
-                        FXMLLoader loader = App.loadFXML("buscarVehiculo");
-                        Scene sc = new Scene(loader.load(), 640, 480);
-                        BuscarVehiculoController bv = loader.getController();
-                        Stage st = new Stage();
-                        st.setScene(sc);
-                        st.show();
-                        Stage old = (Stage)b.getScene().getWindow();
-                        old.close();
-                    } catch (IOException ex) {
-                        Alert a = new Alert(Alert.AlertType.ERROR, "No se pudo cargar el archivo");
-                        a.show();
-                    }
-                    break;
-                }
-
-                case 4:{
-                    try {
-                        FXMLLoader loader = App.loadFXML("ofertarVehiculo");
-                        Scene sc = new Scene(loader.load(), 640, 480);
-                        OfertarVehiculoController ov = loader.getController();
-                        Stage st = new Stage();
-                        st.setScene(sc);
-                        st.show();
-                        Stage old = (Stage)b.getScene().getWindow();
-                        old.close();
-                    } catch (IOException ex) {
-                        Alert a = new Alert(Alert.AlertType.ERROR, "No se pudo cargar el archivo");
-                        a.show();
-                    }
-                    break;
-                }
-                default:{
-                    Alert a = new Alert(Alert.AlertType.ERROR, "Opcion incorrecta");
-                    a.show();
-                }
+        }else if(valor==2){
+            try {
+                FXMLLoader loader = App.loadFXML("comprador");
+                Scene sc = new Scene(loader.load(), 640, 480);
+                CompradorController mc = loader.getController();
+                mc.setUsuario(this.correo_usuario);
+                Stage st = new Stage();
+                st.setScene(sc);
+                st.show();
+                Stage old = (Stage) b.getScene().getWindow();
+                old.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }else if(valor==3){
+            try {
+                FXMLLoader loader = App.loadFXML("perfil_usuario");
+                Scene sc = new Scene(loader.load(), 640, 480);
+                PerfilusuarioController mc = loader.getController();
+                mc.setUsuario(this.correo_usuario);
+                Stage st = new Stage();
+                st.setScene(sc);
+                st.show();
+                Stage old = (Stage) b.getScene().getWindow();
+                old.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
             }
         }
-        catch(NullPointerException np){
-            np.getStackTrace();
-            Alert a = new Alert(Alert.AlertType.ERROR, "Elija una opción");
-            a.show();
-        }
-        
-        
+    }
+
+    public void setUsuario(String correo){
+        this.correo_usuario = correo;
+
     }
 }
+
+        
