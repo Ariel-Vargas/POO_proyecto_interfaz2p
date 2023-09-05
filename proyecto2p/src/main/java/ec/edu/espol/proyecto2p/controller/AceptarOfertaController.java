@@ -23,6 +23,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import ec.edu.espol.proyecto2p.modelo.Utilitarios;
 
 /**
  * FXML Controller class
@@ -80,7 +81,7 @@ public class AceptarOfertaController implements Initializable {
     @FXML
     private void aceptarOferta(MouseEvent event) {
         
-             Utilitarios.enviarConGMail(correoComprador, Asunto, cuerpo);
+             Utilitarios.enviarConGmail(correoComprador, asunto, cuerpo);
 
         
              Alert a = new Alert(Alert.AlertType.INFORMATION, "Se ha enviado un correo al Comprador para indicar que ha aceptado su oferta");
