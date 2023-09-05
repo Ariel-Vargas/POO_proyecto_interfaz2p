@@ -107,7 +107,8 @@ public Vehiculo(String placa, String marca, String modelo, String tipoMotor, int
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-public static void saveSer(String n, ArrayList<Vehiculo> vehiculos){
+    
+    public static void saveSer(String n, ArrayList<Vehiculo> vehiculos){
         try(ObjectOutputStream bo = new ObjectOutputStream(new FileOutputStream(n))){
             bo.writeObject(vehiculos);
         }catch(IOException e){}
@@ -122,5 +123,6 @@ public static void saveSer(String n, ArrayList<Vehiculo> vehiculos){
         
         return vehiculos;
     }
+    
     
 }
