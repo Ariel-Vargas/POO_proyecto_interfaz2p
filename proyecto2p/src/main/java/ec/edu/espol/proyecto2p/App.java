@@ -24,6 +24,8 @@ public class App extends Application {
         st = stage;
         scene = new Scene(loadFXML("login").load(), 640, 480);
         stage.setScene(scene);
+        stage.setTitle("COMPRA Y VENTA DE VEHICULOS");
+        stage.setResizable(false);
         stage.show();
     }
 
