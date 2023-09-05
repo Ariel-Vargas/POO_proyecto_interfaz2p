@@ -1,9 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
-package ec.edu.espol.proyecto2p;
+package ec.edu.espol.proyecto2p.controller;
 
+import ec.edu.espol.proyecto2p.App;
+import ec.edu.espol.proyecto2p.modelo.Usuario;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -21,9 +19,11 @@ import javafx.scene.input.MouseEvent;
 /**
  * FXML Controller class
  *
- * @author ariel
+ 
  */
 public class RegistroCuentaController implements Initializable {
+
+    String correo_usuario;
 
     @FXML
     private TextField nombre;
@@ -37,7 +37,8 @@ public class RegistroCuentaController implements Initializable {
     private Button aceptarcuenta;
     @FXML
     private Button salir;
-    
+    @FXML
+    private TextField organizacion;
 
     /**
      * Initializes the controller class.
@@ -56,19 +57,36 @@ public class RegistroCuentaController implements Initializable {
             a.show();
         }
         else{
-            Usuario u = new Usuario(cor, cont);
-            ArrayList<Usuario> lista = new ArrayList<>();
-            lista.add(u);
-
-            Usuario.saveSer("UsuarioRegistradoSer.txt", lista);
             
+            ArrayList<Usuario> usuarios = Usuario.readSer("usuario.ser");
+        
+            for(Usuario u: usuarios){
+                if(u.getCorreoe().equals(cor)){
+                    Alert a = new Alert(Alert.AlertType.INFORMATION, "Este correo ya está registrado");
+                    a.show();
+                    correo.setText("");
+                    contrasena.setText("");
+                    return;                
+                }
+            }
+            
+            Usuario us = new Usuario(cor,cont,nombre.getText(),apellido.getText(),organizacion.getText());
+            usuarios.add(us);
+            Usuario.saveSer("usuario.ser", usuarios);
+//            Usuario.saveSer("UsuarioRegistradoSer.txt", usuarios);
+            Alert a = new Alert(Alert.AlertType.INFORMATION, "Registro exitoso");
+            a.show();
+            correo.setText("");
+            contrasena.setText("");
+        
+                       
             try {
                 FXMLLoader loader = App.loadFXML("login");
                 Scene sc = new Scene(loader.load(), 640, 480);
                 LoginController lc = loader.getController();
                 App.setScene(sc);
             } catch (IOException ex) {
-                Alert a = new Alert(Alert.AlertType.ERROR, "No se pudo cargar el archivo");
+                Alert a1 = new Alert(Alert.AlertType.ERROR, "No se pudo cargar el archivo");
                 a.show();
             }
         }
@@ -86,6 +104,11 @@ public class RegistroCuentaController implements Initializable {
             Alert a = new Alert(Alert.AlertType.ERROR, "No se pudo cargar el archivo");
             a.show();
         }
+    }
+
+    public void setUsuario(String correo){
+        this.correo_usuario = correo;
+
     }
     
 }
